@@ -12,11 +12,11 @@
   display: flex;
   align-items: center;
 
-  nav{
+  nav {
     margin-left: 5rem;
     height: 5rem;
 
-    a{
+    a {
       display: inline-block;
       position: relative;
       padding: 0 0.5rem;
@@ -50,5 +50,9 @@
         background: var(--yellow-500);
       }
     }
+  }
+  
+  button {
+    margin-left: auto;
   }
 }
