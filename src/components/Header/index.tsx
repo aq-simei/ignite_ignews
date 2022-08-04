@@ -1,17 +1,22 @@
-import { SignInButton } from '../signInButton'
 import styles from './styles.module.scss'
+import { SignInButton } from '../signInButton'
 
-export const Header = () => {
+type HeaderProps = {
+  login: boolean
+}
+
+export const Header = ({login}: HeaderProps) => {
+
   return(
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
         <img src="/images/logo.svg" alt='ig.news'/>
         <nav>
-          <a className={styles.active}href="">Home</a>
+          <a className={styles.active} href="">Home</a>
           <a href="">Posts</a>
         </nav>
-        
-        <SignInButton />
+
+        <SignInButton isUserLoggedIn={login}/>
       </div>
     </header>
   )
