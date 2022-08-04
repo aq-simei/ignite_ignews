@@ -5,7 +5,7 @@ import { Header } from '../components/Header'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Header /> 
+      <Header login={true}/> 
       <Component {...pageProps} />
     </>
   )

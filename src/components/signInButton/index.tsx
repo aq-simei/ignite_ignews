@@ -1,6 +1,9 @@
 import { NotLoggedInButton } from "./compose/notLoggedInButton";
 import { LoggedInButton } from "./compose/loggedInButton";
-export const SignInButton = () => {
-  const isUserLoggedIn = true;
+type SignInButtonProps = {
+  isUserLoggedIn: boolean;
+}
+
+export const SignInButton = ({isUserLoggedIn}: SignInButtonProps) => {
   return isUserLoggedIn ? <LoggedInButton /> : <NotLoggedInButton />;
 };
