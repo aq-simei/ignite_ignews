@@ -15,7 +15,7 @@ describe('NotLoggedInButton', () => {
   
   it('should render the Sign In message', () => {
     setup();
-    const buttonText = screen.getByText('Sign In With Github');
+    const buttonText = screen.getByRole('button', {name: 'Sign In With Github'});
 
     expect(buttonText).toBeInTheDocument();
   })
