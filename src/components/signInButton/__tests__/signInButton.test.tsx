@@ -10,7 +10,7 @@ describe("SignInButton", () => {
   describe("when the user is not logged in", () => {
     it("should render the SignIn button", () => {
       setup(false);
-      const signInText = screen.getByText("Sign In With Github");
+      const signInText = screen.getByRole("button", {name: 'Sign In With Github'});
 
       expect(signInText).toBeInTheDocument();
     });
@@ -18,7 +18,7 @@ describe("SignInButton", () => {
   describe("when the user is logged in", () => {
     it("should render the user's github name", () => {
       setup(true);
-      const userName = screen.getByText("GH Username");
+      const userName = screen.getByRole('button', {name: "GH Username"});
 
       expect(userName).toBeInTheDocument();
     });

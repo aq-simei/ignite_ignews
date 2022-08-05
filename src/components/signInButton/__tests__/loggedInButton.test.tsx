@@ -9,9 +9,9 @@ describe('LoggedInButton', () => {
   
   it('should render the logged user name on the button', () => {
     setup();
-    const gitHubUserName = screen.getByText('GH Username');
+    const loggedInButton = screen.getByRole('button', {name: 'GH Username'});
 
-    expect(gitHubUserName).toBeInTheDocument();
+    expect(loggedInButton).toBeInTheDocument();
   })
   it('should render a close icon', () => {
     setup();
