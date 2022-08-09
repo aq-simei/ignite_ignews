@@ -1,12 +1,11 @@
-import styles from './styles.module.scss'
-import { SignInButton } from '../signInButton'
+import styles from './styles.module.scss';
+import { SignInButton } from '../signInButton';
+import {useSession} from 'next-auth/react';
 
-type HeaderProps = {
-  login: boolean
-}
-
-export const Header = ({login}: HeaderProps) => {
-
+export const Header = () => {
+  const session = useSession();
+  const {data} = session;
+  // session = {user = {name: string, email: string , image: string}, expires:  string}
   return(
     <header className={styles.headerContainer}>
       <div className={styles.headerContent}>
@@ -16,7 +15,7 @@ export const Header = ({login}: HeaderProps) => {
           <a href="">Posts</a>
         </nav>
 
-        <SignInButton isUserLoggedIn={login}/>
+        <SignInButton session={data}/>
       </div>
     </header>
   )
