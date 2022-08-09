@@ -1,15 +1,15 @@
-import {render, screen} from '../../../utils/test-utils';
+import {AuthRender, screen} from '../../../utils/test-utils';
 import {LoggedInButton} from '../compose/loggedInButton/index';
 
 describe('LoggedInButton', () => {
 
   const setup = () => {
-    render(<LoggedInButton />);
+    AuthRender(<LoggedInButton />);
   }
   
   it('should render the logged user name on the button', () => {
     setup();
-    const loggedInButton = screen.getByRole('button', {name: 'GH Username'});
+    const loggedInButton = screen.getByRole('button', {name: 'test user'});
 
     expect(loggedInButton).toBeInTheDocument();
   })

@@ -1,9 +1,9 @@
-import { render, screen } from "../../../utils/test-utils";
+import { noAuthRender, screen } from "../../../utils/test-utils";
 import {NotLoggedInButton} from "../../signInButton/compose/notLoggedInButton/index";
 
 describe('NotLoggedInButton', () => {
   const setup = () => {
-    render(<NotLoggedInButton />)
+    noAuthRender(<NotLoggedInButton />)
   }
 
   it('should render the GitHub Icon', () => {
