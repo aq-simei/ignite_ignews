@@ -1,9 +1,15 @@
 import { NotLoggedInButton } from "./compose/notLoggedInButton";
 import { LoggedInButton } from "./compose/loggedInButton";
-type SignInButtonProps = {
-  isUserLoggedIn: boolean;
-}
+import { Session } from "next-auth/core/types";
 
-export const SignInButton = ({isUserLoggedIn}: SignInButtonProps) => {
-  return isUserLoggedIn ? <LoggedInButton /> : <NotLoggedInButton />;
+type SignInButtonProps = {
+  session: Session | null;
+};
+
+export const SignInButton = ({ session }: SignInButtonProps) => {
+  return session ? (
+    <LoggedInButton />
+  ) : (
+    <NotLoggedInButton />
+  );
 };
